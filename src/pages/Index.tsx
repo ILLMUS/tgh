@@ -11,6 +11,22 @@ import {
   Phone,
   MapPin,
   Star,
+  Wifi,
+  CigaretteOff,
+  CircleParking,
+  Waves,
+  Dumbbell,
+  Plane,
+  Briefcase,
+  DoorOpen,
+  KeyRound,
+  ConciergeBell,
+  PlugZap,
+  Baby,
+  Users,
+  Soup,
+  Presentation,
+  PawPrint,
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroImage from "@/assets/hero-hotel.jpg";
@@ -90,6 +106,26 @@ const testimonials = [
   { name: "Amara K.", text: "The spa was heavenly and the dining experience was world-class. We will return every year.", rating: 5 },
 ];
 
+const amenities = [
+  { icon: Wifi, label: "Free WiFi" },
+  { icon: CigaretteOff, label: "Non-smoking rooms" },
+  { icon: UtensilsCrossed, label: "On-site restaurant" },
+  { icon: CircleParking, label: "Free parking" },
+  { icon: Waves, label: "Outdoor pool" },
+  { icon: Dumbbell, label: "Fitness center" },
+  { icon: Plane, label: "Airport shuttle" },
+  { icon: Briefcase, label: "Business center" },
+  { icon: DoorOpen, label: "Connecting Rooms" },
+  { icon: KeyRound, label: "Digital Key" },
+  { icon: ConciergeBell, label: "Concierge" },
+  { icon: PlugZap, label: "EV charging" },
+  { icon: Baby, label: "Cribs" },
+  { icon: Users, label: "Childcare" },
+  { icon: Soup, label: "Room service" },
+  { icon: Presentation, label: "Meeting rooms" },
+  { icon: PawPrint, label: "Pets not allowed", muted: true },
+];
+
 const galleryImages = [heroImage, exteriorImage, suiteImage, diningImage, spaImage, eventsImage];
 
 /* ------------------------------------------------------------------ */
@@ -164,8 +200,8 @@ const Index = () => {
 
 
           {/* ---------- Headline block ---------- */}
-          <div className="absolute inset-x-0 bottom-0 z-20 px-6 pb-10 text-center md:pb-12 lg:inset-x-auto lg:bottom-auto lg:left-10 lg:top-[24%] lg:max-w-[640px] lg:px-0 lg:pb-0 lg:text-left">
-            <h1 className="font-display text-[2.35rem] font-light leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[4.1rem]">
+          <div className="absolute inset-x-0 bottom-0 z-20 px-6 pb-2 text-center md:pb-4 lg:inset-x-auto lg:bottom-auto lg:left-10 lg:top-[24%] lg:max-w-[640px] lg:px-0 lg:pb-0 lg:text-left">
+            <h1 className="mt-8 font-display text-[2.35rem] font-light leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[4.1rem]">
               Instant online
               <span className="mx-2 hidden h-[0.8em] w-[2.2em] translate-y-[0.12em] overflow-hidden rounded-full align-baseline lg:inline-block">
                 <img src={heroImage} alt="" className="h-full w-full object-cover object-[50%_85%]" />
@@ -189,7 +225,7 @@ const Index = () => {
 
           {/* Location tag (desktop) */}
           <div className="absolute left-[44%] top-[15%] z-20 hidden items-center gap-2 rounded-full bg-black/40 px-4 py-1.5 font-body text-xs text-white backdrop-blur-md lg:flex">
-            <MapPin size={12} /> Eswatini
+            <MapPin size={12} /> Ngwane Street, Manzini, Eswatini, M200
           </div>
 
           {/* ---------- Slide card (desktop) ---------- */}
@@ -364,6 +400,58 @@ const Index = () => {
                 </Link>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========================== AMENITIES ========================== */}
+      <section className="p-2 md:p-3">
+        <div className="rounded-[24px] bg-[#1b2b3b] px-6 py-16 md:rounded-[32px] md:py-24">
+          <div className="container mx-auto">
+            <ScrollReveal>
+              <div className="mb-12 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+                <div className="max-w-2xl">
+                  <p className="mb-4 font-body text-sm text-white/60">Amenities</p>
+                  <h2 className="font-display text-4xl font-light leading-tight text-white md:text-5xl">
+                    Everything included for an effortless stay
+                  </h2>
+                </div>
+                <Link
+                  to="/rooms"
+                  className="group flex w-fit items-center gap-4 rounded-full bg-white py-1.5 pl-7 pr-1.5 font-body text-base font-medium text-[#1b2b3b] shadow-lg transition-shadow hover:shadow-2xl"
+                >
+                  View All
+                  <ArrowCircle />
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {amenities.map((a, i) => (
+                <ScrollReveal key={a.label} delay={(i % 4) * 80}>
+                  <div
+                    className={`flex items-center gap-4 rounded-full p-2 pr-6 backdrop-blur-md ${
+                      "muted" in a && a.muted ? "bg-white/5" : "bg-white/10"
+                    }`}
+                  >
+                    <span
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full ${
+                        "muted" in a && a.muted ? "bg-white/20 text-white/70" : "bg-white text-[#1b2b3b]"
+                      }`}
+                    >
+                      <a.icon size={18} />
+                    </span>
+                    <span
+                      className={`font-body text-sm ${
+                        "muted" in a && a.muted ? "text-white/60" : "text-white"
+                      }`}
+                    >
+                      {a.label}
+                    </span>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>

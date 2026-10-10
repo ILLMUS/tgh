@@ -32,9 +32,9 @@ const venues = [
 
 const Events = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative m-0 flex h-[50vh] items-center justify-center overflow-hidden p-0">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${eventsImage})` }} />
         <div className="absolute inset-0 bg-foreground/55" />
         <div className="relative z-10 text-center px-6">

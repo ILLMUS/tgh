@@ -31,43 +31,57 @@ const services = [
 
 const Spa = () => {
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${spaImage})` }} />
+    <div className="m-0 min-h-screen p-0">
+      {/* Hero — full width, zero margin and padding */}
+      <section className="relative m-0 flex h-[50vh] w-full items-center justify-center overflow-hidden p-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${spaImage})` }}
+        />
         <div className="absolute inset-0 bg-foreground/50" />
-        <div className="relative z-10 text-center px-6">
-          <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-3">Rejuvenate</p>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-primary-foreground">Spa & Wellness</h1>
+        <div className="relative z-10 px-6 text-center">
+          <p className="mb-3 font-body text-sm uppercase tracking-[0.3em] text-primary">
+            Rejuvenate
+          </p>
+          <h1 className="font-display text-5xl font-bold text-primary-foreground md:text-6xl">
+            Spa & Wellness
+          </h1>
         </div>
       </section>
 
       {/* Services */}
-      <section className="py-24 bg-background">
+      <section className="bg-background py-24">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center mb-16 max-w-2xl mx-auto">
-              <h2 className="font-display text-4xl font-bold text-foreground mb-4">
+            <div className="mx-auto mb-16 max-w-2xl text-center">
+              <h2 className="mb-4 font-display text-4xl font-bold text-foreground">
                 A Sanctuary of <span className="gold-text-gradient">Serenity</span>
               </h2>
-              <p className="text-muted-foreground font-body">
+              <p className="font-body text-muted-foreground">
                 Surrender to tranquility in our world-class spa. Every treatment is designed to restore balance and awaken your senses.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid gap-10 md:grid-cols-2">
             {services.map((service, i) => (
               <ScrollReveal key={service.name} delay={i * 100}>
-                <div className="bg-card rounded-xl p-8 shadow-md border border-border hover:border-primary/30 transition-colors">
-                  <service.icon className="text-primary mb-4" size={36} />
-                  <h3 className="font-display text-2xl font-bold text-foreground mb-3">{service.name}</h3>
-                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-5">{service.desc}</p>
+                <div className="rounded-xl border border-border bg-card p-8 shadow-md transition-colors hover:border-primary/30">
+                  <service.icon className="mb-4 text-primary" size={36} />
+                  <h3 className="mb-3 font-display text-2xl font-bold text-foreground">
+                    {service.name}
+                  </h3>
+                  <p className="mb-5 font-body text-sm leading-relaxed text-muted-foreground">
+                    {service.desc}
+                  </p>
                   <ul className="space-y-2">
-                    {service.features.map((f) => (
-                      <li key={f} className="text-muted-foreground font-body text-sm flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                        {f}
+                    {service.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-center gap-2 font-body text-sm text-muted-foreground"
+                      >
+                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        {feature}
                       </li>
                     ))}
                   </ul>
