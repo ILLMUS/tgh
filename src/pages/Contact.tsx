@@ -22,7 +22,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative m-0 flex h-[40vh] items-center justify-center overflow-hidden p-0">
+      <section className="relative m-0 flex h-[40vh] items-center justify-center overflow-hidden p-0 mt-5">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
         <div className="absolute inset-0 bg-foreground/60" />
         <div className="relative z-10 text-center px-6">
