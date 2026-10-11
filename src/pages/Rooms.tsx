@@ -9,9 +9,7 @@ import {
   Coffee,
   Tv,
   Bath,
-  Wind,
   Utensils,
-  Gem,
   UtensilsCrossed,
   CigaretteOff,
   CircleParking,
@@ -43,15 +41,13 @@ const inRoom = {
   bath: { icon: Bath, label: "Marble bathroom" },
   car: { icon: Car, label: "Private transfer" },
   dining: { icon: Utensils, label: "In-suite dining" },
-  climate: { icon: Wind, label: "Climate control" },
-  gem: { icon: Gem, label: "Premium extras" },
 };
 
 const rooms = [
   {
     name: "Deluxe Room",
     desc: "Elegantly appointed rooms featuring premium linens, marble bathrooms, and views of the manicured gardens.",
-    price: "From $350",
+    price: "From E5,800",
     size: "45 m²",
     image: suiteImage,
     amenities: [inRoom.wifi, inRoom.tv, inRoom.coffee, inRoom.bath],
@@ -59,7 +55,7 @@ const rooms = [
   {
     name: "Executive Suite",
     desc: "Spacious suites with a separate living area, executive workspace, and access to the exclusive lounge.",
-    price: "From $650",
+    price: "From E10,700",
     size: "75 m²",
     image: suiteImage,
     amenities: [inRoom.wifi, inRoom.tv, inRoom.coffee, inRoom.bath, inRoom.car],
@@ -67,27 +63,10 @@ const rooms = [
   {
     name: "Presidential Suite",
     desc: "The pinnacle of luxury with a private terrace, personal butler service, and panoramic vistas.",
-    price: "From $1,200",
+    price: "From E19,800",
     size: "120 m²",
     image: suiteImage,
     amenities: [inRoom.wifi, inRoom.tv, inRoom.coffee, inRoom.bath, inRoom.car, inRoom.dining],
-  },
-  {
-    name: "Royal Penthouse",
-    desc: "An extraordinary residence with private pool, chef's kitchen, and helicopter transfer service.",
-    price: "From $3,500",
-    size: "250 m²",
-    image: suiteImage,
-    amenities: [
-      inRoom.wifi,
-      inRoom.tv,
-      inRoom.coffee,
-      inRoom.bath,
-      inRoom.car,
-      inRoom.dining,
-      inRoom.climate,
-      inRoom.gem,
-    ],
   },
 ];
 
@@ -146,14 +125,14 @@ const Rooms = () => {
             <div className="mb-14 max-w-2xl">
               <p className="mb-4 font-body text-sm text-[#1b2b3b]/60">Choose your stay</p>
               <h2 className="font-display text-4xl font-light text-[#1b2b3b] md:text-5xl">
-                Four ways to stay with us
+                Three ways to stay with us
               </h2>
             </div>
           </ScrollReveal>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {rooms.map((room, i) => (
-              <ScrollReveal key={room.name} delay={(i % 2) * 100}>
+              <ScrollReveal key={room.name} delay={(i % 3) * 100}>
                 <article className="flex h-full flex-col overflow-hidden rounded-[24px] bg-white p-2.5">
                   {/* Image */}
                   <div className="group relative aspect-[4/3] overflow-hidden rounded-[18px]">

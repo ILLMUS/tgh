@@ -228,10 +228,10 @@ const Index = () => {
             <MapPin size={12} /> Ngwane Street, Manzini, Eswatini, M200
           </div>
 
-          {/* ---------- Slide card (desktop) ---------- */}
-          <div className="absolute right-6 top-24 z-30 hidden w-[290px] lg:block xl:right-8">
+          {/* ---------- Slide card (mobile: centred under the top bar, desktop: top right) ---------- */}
+          <div className="absolute inset-x-0 top-[calc(3.75rem_+_env(safe-area-inset-top))] z-30 mx-auto w-[calc(100%_-_3rem)] max-w-[340px] lg:inset-x-auto lg:right-6 lg:top-24 lg:mx-0 lg:w-[290px] xl:right-8">
             <div className="rounded-[22px] bg-white p-2.5 shadow-2xl">
-              <div className="relative h-[190px] overflow-hidden rounded-[16px]">
+              <div className="relative h-[120px] overflow-hidden rounded-[16px] lg:h-[190px]">
                 {heroSlides.map((s, i) => (
                   <img
                     key={s.title}
@@ -254,7 +254,7 @@ const Index = () => {
                 <p className="font-display text-base font-semibold text-[#1b2b3b]">
                   {heroSlides[slide].title}
                 </p>
-                <p className="mt-1 font-body text-xs leading-relaxed text-[#1b2b3b]/60">
+                <p className="mt-1 hidden font-body text-xs leading-relaxed text-[#1b2b3b]/60 lg:block">
                   {heroSlides[slide].text}
                 </p>
                 <div className="mt-4 flex justify-center gap-1.5">

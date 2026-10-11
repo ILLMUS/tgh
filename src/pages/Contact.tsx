@@ -42,7 +42,7 @@ const Contact = () => {
                 </h2>
                 <div className="space-y-6 mb-10">
                   {[
-                    { icon: MapPin, label: "Location", value: "Eswatini" },
+                    { icon: MapPin, label: "Location", value: "Ngwane Street, Manzini, Eswatini, M200" },
                     { icon: Phone, label: "Phone", value: "+268 76265725" },
                     { icon: Mail, label: "Email", value: "reservations@thegeorgehotel.com" },
                   ].map((item) => (
@@ -73,7 +73,7 @@ const Contact = () => {
                 <div className="w-full h-64 rounded-xl overflow-hidden border border-border">
                   <iframe
                     title="Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7238579.041417553!2d22.9375!3d-30.5595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1c34a689d9ee1251%3A0xe85d630c1fa4e8a0!2sEswatini!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                    src="https://www.google.com/maps?q=Ngwane+Street,+Manzini,+Eswatini,+M200&z=16&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -151,7 +151,6 @@ const Contact = () => {
                       <option value="deluxe">Deluxe Room</option>
                       <option value="executive">Executive Suite</option>
                       <option value="presidential">Presidential Suite</option>
-                      <option value="penthouse">Royal Penthouse</option>
                     </select>
                   </div>
                   <div>
